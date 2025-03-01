@@ -1,0 +1,61 @@
+.eme-checkin-dashboard {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.eme-checkin-dashboard h2, .eme-checkin-dashboard h3 {
+    color: #333;
+}
+
+#eme-checkin-form {
+    margin-bottom: 20px;
+}
+
+#eme-checkin-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+#eme-checkin-form select, #eme-checkin-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#eme-checkin-form button {
+    background: #0073aa;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#eme-checkin-form button:hover {
+    background: #005d82;
+}
+
+#checkin-message .success {
+    color: #008000;
+}
+
+#checkin-message .error {
+    color: #ff0000;
+}
+
+#checkin-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#checkin-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}

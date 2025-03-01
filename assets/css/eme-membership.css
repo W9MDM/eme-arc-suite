@@ -1,0 +1,13 @@
+.eme-membership-dashboard { max-width: 800px; margin: 20px auto; padding: 20px; background: #f9f9f9; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+.eme-membership-dashboard h2 { color: #333; }
+#eme-membership-form { margin-bottom: 20px; }
+#eme-membership-form label { display: block; margin: 10px 0 5px; font-weight: bold; }
+#eme-membership-form input[type="text"] { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
+#eme-membership-form button { background: #0073aa; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+#eme-membership-form button:hover { background: #005d82; }
+#membership-status .active { color: #008000; }
+#membership-status .expiring { color: #ffa500; }
+#membership-status .expired { color: #ff0000; }
+#membership-status .error { color: #ff0000; }
+#membership-status .renew-button { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #0073aa; color: #fff; text-decoration: none; border-radius: 4px; }
+#membership-status .renew-button:hover { background: #005d82; }
