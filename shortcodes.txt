@@ -1,0 +1,55 @@
+# EME ARC Suite Shortcodes
+This file lists all shortcodes provided by the EME ARC Suite plugin, along with their descriptions and functionality. These shortcodes can be used in WordPress pages or posts to enable specific front-end features for amateur radio club management.
+
+## 1. [eme_event_checkin]
+- **File**: includes/front/event-checkin.php
+- **Purpose**: Displays a dashboard for club members to check into upcoming Events Made Easy (EME) events using their callsign.
+- **Functionality**: 
+  - Shows a dropdown of future EME events fetched via `eme_get_events()`.
+  - Provides a form for users to select an event and enter their callsign.
+  - Submits the check-in via AJAX to `eme_checkin_submit()`, recording it in the `wp_eme_checkins` table if the callsign exists in the EME database.
+  - Displays a real-time list of checked-in members for the selected event, including callsign, name, and check-in time.
+  - Prevents duplicate check-ins for the same event and person.
+- **Requirements**: Requires Events Made Easy plugin for event data and member database integration.
+- **Output**: A form and a dynamic list updated via AJAX upon successful check-in.
+
+## 2. [eme_member_checkin]
+- **File**: includes/front/member-checkin.php
+- **Purpose**: Provides a dashboard for club members to check in using their callsign, recording general attendance (not tied to specific events).
+- **Functionality**: 
+  - Offers a simple form for users to enter their callsign.
+  - Submits the check-in via AJAX to `eme_member_checkin_submit()`, adding a record to the `wp_eme_member_checkins` table.
+  - If the callsign isn’t in the EME database, it queries the HamDB API to create a new person record before checking them in.
+  - Displays a real-time list of today’s attendees, showing callsign, name, check-in time, membership type, and expiration (if applicable), with a "New Member" note for first-time check-ins.
+- **Requirements**: Requires Events Made Easy for member database and HamDB API access for new member creation.
+- **Output**: A form and a dynamic list updated via AJAX, reflecting daily attendance.
+
+## 3. [eme_membership_renewal]
+- **File**: includes/front/membership-renewal.php
+- **Purpose**: Allows members to check their membership status and renew if expired, using their callsign.
+- **Functionality**: 
+  - Displays a form for entering a callsign.
+  - Submits the callsign via AJAX to `eme_membership_check_status()`, retrieving membership details from the EME database (`wp_eme_members`).
+  - Shows the member’s callsign, name, membership type, and status (Active or Expired).
+  - If expired (status = 100), provides a "Renew Now" link to a specific renewal page based on membership ID (e.g., `[eme_add_member_form id=X]` pages created on activation).
+  - Handles cases where the membership table or renewal pages are missing with error messages.
+- **Requirements**: Requires Events Made Easy for membership data and pre-created renewal pages.
+- **Output**: A form and a status display with a renewal link for expired memberships.
+
+## 4. [arc_propagation]
+- **File**: includes/front/propagation-widget.php
+- **Purpose**: Displays a real-time propagation forecast widget tailored for Porter County, Indiana.
+- **Functionality**: 
+  - Fetches propagation data (SFI, sunspots, A-index, K-index, X-ray) from NOAA and HamQSL APIs, cached via transients.
+  - Calculates band conditions (160m to 70cm) based on SFI and K-index, displaying them with color-coded tiles (Excellent, Good, Fair, Poor, Closed).
+  - Includes a rotating map display (HamQSL solar, grayline, VOACAP HF) updated every 30 seconds.
+  - Refreshes data periodically (default 1 hour) via AJAX, controlled by `arc-propagation.js`.
+  - Allows double-clicking band tiles for a fullscreen view (toggle off by double-clicking again).
+- **Requirements**: No specific EME dependency, but relies on external APIs and static assets (`arc-propagation.css`, `arc-propagation.js`).
+- **Output**: A styled dashboard with metrics, band conditions, and an interactive map.
+
+# Usage Notes
+- Place these shortcodes in WordPress pages or posts (e.g., `[eme_event_checkin]`).
+- Ensure required plugins (Events Made Easy, EME ARC Membership Addon - Core) and assets are installed.
+- Some features (e.g., renewal links, new member creation) depend on backend configuration and API availability.
+- Check the plugin documentation or debug logs for troubleshooting if functionality is missing.
