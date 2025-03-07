@@ -14,15 +14,15 @@ This file lists all shortcodes provided by the EME ARC Suite plugin, along with 
 - **Output**: A form and a dynamic list updated via AJAX upon successful check-in.
 
 ## 2. [eme_member_checkin]
-- **File**: includes/front/member-checkin.php
+- **File**: includes/front/eme-member-checkin-front.php (updated in v1.0.2; previously member-checkin.php)
 - **Purpose**: Provides a dashboard for club members to check in using their callsign, recording general attendance (not tied to specific events).
 - **Functionality**: 
-  - Offers a simple form for users to enter their callsign.
+  - Offers a simple form for users to enter their callsign, registered via `eme_register_member_check_shortcodes()` in `member-check.php`.
   - Submits the check-in via AJAX to `eme_member_checkin_submit()`, adding a record to the `wp_eme_member_checkins` table.
   - If the callsign isn’t in the EME database, it queries the HamDB API to create a new person record before checking them in.
   - Displays a real-time list of today’s attendees, showing callsign, name, check-in time, membership type, and expiration (if applicable), with a "New Member" note for first-time check-ins.
 - **Requirements**: Requires Events Made Easy for member database and HamDB API access for new member creation.
-- **Output**: A form and a dynamic list updated via AJAX, reflecting daily attendance.
+- **Output**: A form and a dynamic list updated via AJAX, reflecting daily attendance with enhanced front-end logic in v1.0.2.
 
 ## 3. [eme_membership_renewal]
 - **File**: includes/front/membership-renewal.php
@@ -31,7 +31,7 @@ This file lists all shortcodes provided by the EME ARC Suite plugin, along with 
   - Displays a form for entering a callsign.
   - Submits the callsign via AJAX to `eme_membership_check_status()`, retrieving membership details from the EME database (`wp_eme_members`).
   - Shows the member’s callsign, name, membership type, and status (Active or Expired).
-  - If expired (status = 100), provides a "Renew Now" link to a specific renewal page based on membership ID (e.g., `[eme_add_member_form id=X]` pages created on activation).
+  - If expired (status = 100), provides a "Renew Now" link to a specific renewal page based on membership ID.
   - Handles cases where the membership table or renewal pages are missing with error messages.
 - **Requirements**: Requires Events Made Easy for membership data and pre-created renewal pages.
 - **Output**: A form and a status display with a renewal link for expired memberships.
@@ -45,11 +45,11 @@ This file lists all shortcodes provided by the EME ARC Suite plugin, along with 
   - Includes a rotating map display (HamQSL solar, grayline, VOACAP HF) updated every 30 seconds.
   - Refreshes data periodically (default 1 hour) via AJAX, controlled by `arc-propagation.js`.
   - Allows double-clicking band tiles for a fullscreen view (toggle off by double-clicking again).
-- **Requirements**: No specific EME dependency, but relies on external APIs and static assets (`arc-propagation.css`, `arc-propagation.js`).
+- **Requirements**: No specific EME dependency, but relies on external APIs and static assets.
 - **Output**: A styled dashboard with metrics, band conditions, and an interactive map.
 
 # Usage Notes
 - Place these shortcodes in WordPress pages or posts (e.g., `[eme_event_checkin]`).
-- Ensure required plugins (Events Made Easy, EME ARC Membership Addon - Core) and assets are installed.
-- Some features (e.g., renewal links, new member creation) depend on backend configuration and API availability.
-- Check the plugin documentation or debug logs for troubleshooting if functionality is missing.
+- Ensure required plugins (Events Made Easy, EME ARC Suite - Core) and assets are installed.
+- The `[eme_member_checkin]` shortcode now uses `eme-member-checkin-front.php` with enhanced front-end features in v1.0.2.
+- Check debug logs if shortcode functionality is missing (e.g., missing `eme_register_member_check_shortcodes()`).

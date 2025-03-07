@@ -5,7 +5,7 @@ A comprehensive WordPress plugin suite for amateur radio club management, built 
 ## Features
 - **Membership Admin**: Manage callsigns, memberships, CSV imports, discount codes, and email generation.
 - **Event Check-In**: Check into EME events with real-time attendance display (`[eme_event_checkin]`).
-- **Member Check-In**: Record general attendance with callsign verification (`[eme_member_checkin]`).
+- **Member Check-In**: Record general attendance with callsign verification (`[eme_member_checkin]`), enhanced with new front-end logic in v1.0.2.
 - **Membership Renewal**: Check and renew membership status (`[eme_membership_renewal]`).
 - **Propagation Widget**: Display real-time propagation forecasts for Porter County, IN (`[arc_propagation]`).
 - **Attendance Cards**: Generate PDF cards for members with QR codes.
@@ -14,7 +14,7 @@ A comprehensive WordPress plugin suite for amateur radio club management, built 
 ## Requirements
 - WordPress 5.0+
 - [Events Made Easy](https://wordpress.org/plugins/events-made-easy/)
-- [EME ARC Suite - Core](https://github.com/W9MDM/eme-arc-suite-core) (download and activate first)
+- [EME ARC Suite - Core](https://github.com/W9MDM/eme-arc-suite-core) (download and activate first; must define `EME_ARC_CORE_VERSION`)
 - PHP 7.4+ (for DomPDF compatibility)
 - Internet access (for HamDB API and propagation data)
 
@@ -27,7 +27,7 @@ See `INSTALLATION.md` for detailed steps. Basic overview:
 
 ## Usage
 - Use shortcodes in pages/posts (e.g., `[eme_event_checkin]`).
-- Access admin features under "EME ARC Management" in the WordPress dashboard.
+- Access admin features under "EME ARC Suite" in the WordPress dashboard.
 - Configure settings via submenus (e.g., Membership Settings).
 
 ## Contributing
@@ -42,3 +42,6 @@ GPL-2.0+ (see plugin header for details).
 
 ## Author
 W9MDM, with assistance from Grok (xAI).
+
+## Version
+Current version: 1.0.2 (March 07, 2025).
