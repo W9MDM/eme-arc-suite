@@ -1,0 +1,18 @@
+.eme-arc-tabs .nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+
+.eme-arc-tabs .nav-tab {
+    cursor: pointer;
+}
+
+.eme-arc-tabs .tab-content {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.eme-arc-tabs .nav-tab-active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+}

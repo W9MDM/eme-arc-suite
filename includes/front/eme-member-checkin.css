@@ -1,0 +1,11 @@
+.eme-checkin-wrapper { max-width: 600px; margin: 20px auto; }
+.eme-checkin-form { margin-bottom: 20px; }
+.eme-checkin-form label { display: inline-block; width: 100px; font-weight: bold; }
+.eme-checkin-form input[type="number"] { padding: 5px; width: 150px; }
+.eme-checkin-form input[type="submit"] { padding: 5px 15px; background: #0073aa; color: white; border: none; cursor: pointer; }
+.eme-checkin-form input[type="submit"]:hover { background: #005177; }
+.eme-success { color: #008000; font-weight: bold; }
+.eme-error { color: #ff0000; font-weight: bold; }
+.eme-checkin-table { width: 100%; border-collapse: collapse; }
+.eme-checkin-table th, .eme-checkin-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+.eme-checkin-table th { background: #f5f5f5; }

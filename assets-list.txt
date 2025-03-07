@@ -1,0 +1,49 @@
+# EME ARC Suite Assets List
+This file lists all CSS and JS assets required by the plugin, with their purposes and sources.
+
+## CSS Files (eme-arc-suite/assets/css/)
+1. **eme-arc-tabs.css**
+   - Purpose: Styles tabbed interfaces in admin pages (e.g., membership management, email code).
+   - Source: Originally from EME ARC Membership Addon - Admin.
+
+2. **eme-checkin.css**
+   - Purpose: Styles the event check-in dashboard (`[eme_event_checkin]`).
+   - Source: EME Event Check-In Dashboard.
+
+3. **eme-member-checkin.css**
+   - Purpose: Styles the member check-in dashboard (`[eme_member_checkin]`).
+   - Source: EME Member Check-In Dashboard.
+
+4. **eme-membership.css**
+   - Purpose: Styles the membership renewal dashboard (`[eme_membership_renewal]`).
+   - Source: EME Membership Renewal Dashboard.
+
+5. **arc-propagation.css**
+   - Purpose: Styles the propagation forecast widget (`[arc_propagation]`), including tiles and maps.
+   - Source: ARC Propagation Forecast Widget (Porter County Enhanced).
+
+## JS Files (eme-arc-suite/assets/js/)
+1. **eme-arc-tabs.js**
+   - Purpose: Handles tab switching in admin interfaces.
+   - Source: EME ARC Membership Addon - Admin.
+
+2. **eme-checkin.js**
+   - Purpose: Manages AJAX check-in submissions and updates for `[eme_event_checkin]`.
+   - Source: EME Event Check-In Dashboard.
+
+3. **eme-member-checkin.js**
+   - Purpose: Handles AJAX check-in submissions and list updates for `[eme_member_checkin]`.
+   - Source: EME Member Check-In Dashboard.
+
+4. **eme-membership.js**
+   - Purpose: Submits callsign checks and displays status for `[eme_membership_renewal]`.
+   - Source: EME Membership Renewal Dashboard.
+
+5. **arc-propagation.js**
+   - Purpose: Refreshes propagation data, rotates maps, and manages interactive features for `[arc_propagation]`.
+   - Source: ARC Propagation Forecast Widget (Porter County Enhanced).
+
+# Notes
+- Ensure all files are present in their respective directories (`css/` and `js/`).
+- If missing, check original plugin sources or regenerate from documentation (e.g., `arc-propagation.js` was provided).
+- Versioning is static (e.g., '1.3' for propagation assets); update as needed.
